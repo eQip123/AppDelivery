@@ -31,6 +31,7 @@
 		1CDDEE1B290BD7BF0036D0E6 /* NewOrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDDEE16290BD7BF0036D0E6 /* NewOrderViewModel.swift */; };
 		1CDDEE1C290BD7BF0036D0E6 /* NewOrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDDEE18290BD7BF0036D0E6 /* NewOrderModel.swift */; };
 		1CDDEE1D290BD7BF0036D0E6 /* NewOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDDEE1A290BD7BF0036D0E6 /* NewOrderViewController.swift */; };
+		1CDDEE20290BDF5B0036D0E6 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDDEE1F290BDF5B0036D0E6 /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		1CDDEE16290BD7BF0036D0E6 /* NewOrderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewOrderViewModel.swift; sourceTree = "<group>"; };
 		1CDDEE18290BD7BF0036D0E6 /* NewOrderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewOrderModel.swift; sourceTree = "<group>"; };
 		1CDDEE1A290BD7BF0036D0E6 /* NewOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewOrderViewController.swift; sourceTree = "<group>"; };
+		1CDDEE1F290BDF5B0036D0E6 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +258,7 @@
 			children = (
 				1CDDEE00290BD1AD0036D0E6 /* MainTabBarController.swift */,
 				1CDDEE02290BD1BB0036D0E6 /* MainViewController.swift */,
+				1CDDEE1F290BDF5B0036D0E6 /* TableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				1CDDEDFA290BCBA30036D0E6 /* ForgotModel.swift in Sources */,
 				1CDDEDFB290BCBA30036D0E6 /* ForgotViewController.swift in Sources */,
 				1CDDEE1B290BD7BF0036D0E6 /* NewOrderViewModel.swift in Sources */,
+				1CDDEE20290BDF5B0036D0E6 /* TableViewCell.swift in Sources */,
 				1CDDEE1D290BD7BF0036D0E6 /* NewOrderViewController.swift in Sources */,
 				1CDDEDE7290BCB5A0036D0E6 /* SecondCustomTextField.swift in Sources */,
 				1CDDEDEF290BCB890036D0E6 /* SignUpViewModel.swift in Sources */,
