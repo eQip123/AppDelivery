@@ -28,6 +28,9 @@
 		1CDDEE01290BD1AD0036D0E6 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDDEE00290BD1AD0036D0E6 /* MainTabBarController.swift */; };
 		1CDDEE03290BD1BB0036D0E6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDDEE02290BD1BB0036D0E6 /* MainViewController.swift */; };
 		1CDDEE09290BD41E0036D0E6 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDDEE08290BD41E0036D0E6 /* HistoryViewController.swift */; };
+		1CDDEE1B290BD7BF0036D0E6 /* NewOrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDDEE16290BD7BF0036D0E6 /* NewOrderViewModel.swift */; };
+		1CDDEE1C290BD7BF0036D0E6 /* NewOrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDDEE18290BD7BF0036D0E6 /* NewOrderModel.swift */; };
+		1CDDEE1D290BD7BF0036D0E6 /* NewOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDDEE1A290BD7BF0036D0E6 /* NewOrderViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +54,9 @@
 		1CDDEE00290BD1AD0036D0E6 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		1CDDEE02290BD1BB0036D0E6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1CDDEE08290BD41E0036D0E6 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		1CDDEE16290BD7BF0036D0E6 /* NewOrderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewOrderViewModel.swift; sourceTree = "<group>"; };
+		1CDDEE18290BD7BF0036D0E6 /* NewOrderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewOrderModel.swift; sourceTree = "<group>"; };
+		1CDDEE1A290BD7BF0036D0E6 /* NewOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewOrderViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +97,7 @@
 				1CDDEDE8290BCB890036D0E6 /* SignUpModule */,
 				1CDDEDFC290BCF200036D0E6 /* MainModule */,
 				1CDDEDF2290BCBA30036D0E6 /* ForgotModule */,
+				1CDDEE14290BD7BF0036D0E6 /* NewOrderModule */,
 				1CDDEDE3290BCB5A0036D0E6 /* Extension */,
 				1CDDEDD8290BCA6B0036D0E6 /* Application */,
 				1CDDEDC5290BC8630036D0E6 /* Assets.xcassets */,
@@ -285,6 +292,40 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		1CDDEE14290BD7BF0036D0E6 /* NewOrderModule */ = {
+			isa = PBXGroup;
+			children = (
+				1CDDEE15290BD7BF0036D0E6 /* ViewModel */,
+				1CDDEE17290BD7BF0036D0E6 /* Model */,
+				1CDDEE19290BD7BF0036D0E6 /* View */,
+			);
+			path = NewOrderModule;
+			sourceTree = "<group>";
+		};
+		1CDDEE15290BD7BF0036D0E6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1CDDEE16290BD7BF0036D0E6 /* NewOrderViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1CDDEE17290BD7BF0036D0E6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1CDDEE18290BD7BF0036D0E6 /* NewOrderModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1CDDEE19290BD7BF0036D0E6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1CDDEE1A290BD7BF0036D0E6 /* NewOrderViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -368,6 +409,8 @@
 				1CDDEDE0290BCAFB0036D0E6 /* SignInViewModel.swift in Sources */,
 				1CDDEDFA290BCBA30036D0E6 /* ForgotModel.swift in Sources */,
 				1CDDEDFB290BCBA30036D0E6 /* ForgotViewController.swift in Sources */,
+				1CDDEE1B290BD7BF0036D0E6 /* NewOrderViewModel.swift in Sources */,
+				1CDDEE1D290BD7BF0036D0E6 /* NewOrderViewController.swift in Sources */,
 				1CDDEDE7290BCB5A0036D0E6 /* SecondCustomTextField.swift in Sources */,
 				1CDDEDEF290BCB890036D0E6 /* SignUpViewModel.swift in Sources */,
 				1CDDEDF0290BCB890036D0E6 /* SignUpModel.swift in Sources */,
@@ -376,6 +419,7 @@
 				1CDDEDE2290BCAFB0036D0E6 /* SignInViewController.swift in Sources */,
 				1CDDEE03290BD1BB0036D0E6 /* MainViewController.swift in Sources */,
 				1CDDEDE6290BCB5A0036D0E6 /* CustomTextField.swift in Sources */,
+				1CDDEE1C290BD7BF0036D0E6 /* NewOrderModel.swift in Sources */,
 				1CDDEE01290BD1AD0036D0E6 /* MainTabBarController.swift in Sources */,
 				1CDDEDBD290BC8620036D0E6 /* AppDelegate.swift in Sources */,
 				1CDDEDBF290BC8620036D0E6 /* SceneDelegate.swift in Sources */,

@@ -19,7 +19,7 @@ class MainTabBarController: UITabBarController {
         viewControllers = [
             generateVC(viewController: MainViewController(), image: UIImage(named: "home")),
             generateVC(viewController: HistoryViewController() , image: UIImage(named: "history")),
-//            generateVC(viewController: NewOrderViewController(), image: UIImage(named: "NewOrder")),
+            generateVC(viewController: NewOrderViewController(), image: UIImage(named: "newOrder")),
 //            generateVC(viewController: ChatViewController(), image: UIImage(named: "Chat")),
 //            generateVC(viewController: InfoViewController(), image: UIImage(named: "Info"))
         ]

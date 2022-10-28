@@ -108,7 +108,7 @@ class NewOrderViewController: UIViewController {
     
     private lazy var backButton: UIButton = {
         let view = UIButton()
-        view.setImage(UIImage(named: "2"), for: .normal)
+        view.setImage(UIImage(named: "back"), for: .normal)
         return view
     }()
     private lazy var newOrderlabel: UILabel = {
@@ -121,29 +121,16 @@ class NewOrderViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        setupViews()
         setupConstraints()
-        bindingViewModel()
         
     }
-    private func setupConstraints() {
+    private func setupViews() {
+        
         view.backgroundColor = .white
         view.addSubview(createButton)
-        createButton.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(689)
-            make.bottom.equalToSuperview().offset(-72)
-            make.centerX.equalToSuperview()
-        }
         view.addSubview(backButton)
-        backButton.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(22)
-            make.top.equalToSuperview().offset(69)
-        }
         view.addSubview(newOrderlabel)
-        newOrderlabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(86)
-            make.centerX.equalToSuperview()
-        }
-        
         view.addSubview(nameTextField)
         view.addSubview(fromWhereTextField)
         view.addSubview(toWhereTextField)
@@ -151,7 +138,27 @@ class NewOrderViewController: UIViewController {
         view.addSubview(heightTextField)
         view.addSubview(weightTextField)
         view.addSubview(commentTextField)
-
+        
+        
+    }
+    private func setupConstraints() {
+        
+        createButton.snp.makeConstraints { make in
+            make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-60)
+            make.centerX.equalToSuperview()
+        }
+        
+        backButton.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(22)
+            make.top.equalToSuperview().offset(69)
+        }
+        newOrderlabel.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(86)
+            make.centerX.equalToSuperview()
+        }
+        
+        
+        
         nameTextField.snp.makeConstraints { make in
             make.top.equalTo(newOrderlabel.snp.bottom).offset(40)
             make.left.equalToSuperview().offset(21)
@@ -196,53 +203,4 @@ class NewOrderViewController: UIViewController {
         }
     }
     
-    private func bindingViewModel() {
-        nameTextField.rx
-            .text
-            .orEmpty
-            .bind(to: viewModel.name)
-            .disposed(by: disposeBag)
-        
-        fromWhereTextField.rx
-            .text
-            .orEmpty
-            .bind(to: viewModel.fromWhere)
-            .disposed(by: disposeBag)
-        
-        toWhereTextField.rx
-            .text
-            .orEmpty
-            .bind(to: viewModel.toWhere)
-            .disposed(by: disposeBag)
-        
-        widthTextField.rx
-            .text
-            .orEmpty
-            .bind(to: viewModel.width)
-            .disposed(by: disposeBag)
-        
-        heightTextField.rx
-            .text
-            .orEmpty
-            .bind(to: viewModel.height)
-            .disposed(by: disposeBag)
-        
-        weightTextField.rx
-            .text
-            .orEmpty
-            .bind(to: viewModel.weight)
-            .disposed(by: disposeBag)
-        
-        commentTextField.rx
-            .text
-            .orEmpty
-            .bind(to: viewModel.comment)
-            .disposed(by: disposeBag)
-        
-        createButton.rx
-            .tap
-            .bind {[weak self] _ in
-                self?.viewModel.saveOrder()
-            }
-    }
 }
