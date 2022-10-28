@@ -197,9 +197,8 @@ class SignInViewController: UIViewController {
                 self?.viewModel.getSavedData()
                 self?.viewModel.canLogIn()
                 if self?.viewModel.status.value == true {
-//                 let vc = MainViewController()
-//                    let mainTabBarController = MainTabBarController()
-//                    self?.navigationController?.pushViewController(mainTabBarController, animated: true)
+                    let mainTabBarController = MainTabBarController()
+                    self?.navigationController?.pushViewController(mainTabBarController, animated: true)
                 } else {
                     let alert = UIAlertController(title: "Ошибка", message: "Неправильный логин или пароль", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))

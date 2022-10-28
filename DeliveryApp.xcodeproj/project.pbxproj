@@ -25,6 +25,8 @@
 		1CDDEDF9290BCBA30036D0E6 /* ForgotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDDEDF4290BCBA30036D0E6 /* ForgotViewModel.swift */; };
 		1CDDEDFA290BCBA30036D0E6 /* ForgotModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDDEDF6290BCBA30036D0E6 /* ForgotModel.swift */; };
 		1CDDEDFB290BCBA30036D0E6 /* ForgotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDDEDF8290BCBA30036D0E6 /* ForgotViewController.swift */; };
+		1CDDEE01290BD1AD0036D0E6 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDDEE00290BD1AD0036D0E6 /* MainTabBarController.swift */; };
+		1CDDEE03290BD1BB0036D0E6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDDEE02290BD1BB0036D0E6 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,8 @@
 		1CDDEDF4290BCBA30036D0E6 /* ForgotViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotViewModel.swift; sourceTree = "<group>"; };
 		1CDDEDF6290BCBA30036D0E6 /* ForgotModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotModel.swift; sourceTree = "<group>"; };
 		1CDDEDF8290BCBA30036D0E6 /* ForgotViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotViewController.swift; sourceTree = "<group>"; };
+		1CDDEE00290BD1AD0036D0E6 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		1CDDEE02290BD1BB0036D0E6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +244,8 @@
 		1CDDEDFF290BCF4A0036D0E6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1CDDEE00290BD1AD0036D0E6 /* MainTabBarController.swift */,
+				1CDDEE02290BD1BB0036D0E6 /* MainViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -332,7 +338,9 @@
 				1CDDEDF0290BCB890036D0E6 /* SignUpModel.swift in Sources */,
 				1CDDEDF1290BCB890036D0E6 /* SignUpViewController.swift in Sources */,
 				1CDDEDE2290BCAFB0036D0E6 /* SignInViewController.swift in Sources */,
+				1CDDEE03290BD1BB0036D0E6 /* MainViewController.swift in Sources */,
 				1CDDEDE6290BCB5A0036D0E6 /* CustomTextField.swift in Sources */,
+				1CDDEE01290BD1AD0036D0E6 /* MainTabBarController.swift in Sources */,
 				1CDDEDBD290BC8620036D0E6 /* AppDelegate.swift in Sources */,
 				1CDDEDBF290BC8620036D0E6 /* SceneDelegate.swift in Sources */,
 				1CDDEDE1290BCAFB0036D0E6 /* SignInModel.swift in Sources */,
