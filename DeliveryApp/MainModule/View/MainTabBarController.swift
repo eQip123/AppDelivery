@@ -18,7 +18,7 @@ class MainTabBarController: UITabBarController {
     private func generateTabBar() {
         viewControllers = [
             generateVC(viewController: MainViewController(), image: UIImage(named: "home")),
-//            generateVC(viewController: HistoryViewController() , image: UIImage(named: "History")),
+            generateVC(viewController: HistoryViewController() , image: UIImage(named: "history")),
 //            generateVC(viewController: NewOrderViewController(), image: UIImage(named: "NewOrder")),
 //            generateVC(viewController: ChatViewController(), image: UIImage(named: "Chat")),
 //            generateVC(viewController: InfoViewController(), image: UIImage(named: "Info"))
