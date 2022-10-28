@@ -22,14 +22,21 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         
+        setupViews()
+        setupConstraints()
+    }
+    func setupViews() {
+        view.backgroundColor = .white
         view.addSubview(givingShine)
+        view.addSubview(tableView)
+    }
+    func setupConstraints() {
         givingShine.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(60)
             make.left.equalToSuperview().offset(22)
         }
-        view.addSubview(tableView)
+        
         tableView.snp.makeConstraints { make in
             make.top.equalTo(givingShine.snp.bottom).offset(20)
             make.leading.equalToSuperview().offset(22)
