@@ -32,6 +32,7 @@
 		1CDDEE1C290BD7BF0036D0E6 /* NewOrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDDEE18290BD7BF0036D0E6 /* NewOrderModel.swift */; };
 		1CDDEE1D290BD7BF0036D0E6 /* NewOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDDEE1A290BD7BF0036D0E6 /* NewOrderViewController.swift */; };
 		1CDDEE20290BDF5B0036D0E6 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDDEE1F290BDF5B0036D0E6 /* TableViewCell.swift */; };
+		1CDDEE24290BE1CD0036D0E6 /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDDEE23290BE1CD0036D0E6 /* DescriptionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		1CDDEE18290BD7BF0036D0E6 /* NewOrderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewOrderModel.swift; sourceTree = "<group>"; };
 		1CDDEE1A290BD7BF0036D0E6 /* NewOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewOrderViewController.swift; sourceTree = "<group>"; };
 		1CDDEE1F290BDF5B0036D0E6 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		1CDDEE23290BE1CD0036D0E6 /* DescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 		1CDDEDBB290BC8620036D0E6 /* DeliveryApp */ = {
 			isa = PBXGroup;
 			children = (
+				1CDDEE21290BE07F0036D0E6 /* DescriptionModule */,
 				1CDDEE04290BD3ED0036D0E6 /* HistoryModule */,
 				1CDDEDD9290BCAFB0036D0E6 /* SignInModule */,
 				1CDDEDE8290BCB890036D0E6 /* SignUpModule */,
@@ -329,6 +332,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		1CDDEE21290BE07F0036D0E6 /* DescriptionModule */ = {
+			isa = PBXGroup;
+			children = (
+				1CDDEE23290BE1CD0036D0E6 /* DescriptionViewController.swift */,
+			);
+			path = DescriptionModule;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -423,6 +434,7 @@
 				1CDDEDE2290BCAFB0036D0E6 /* SignInViewController.swift in Sources */,
 				1CDDEE03290BD1BB0036D0E6 /* MainViewController.swift in Sources */,
 				1CDDEDE6290BCB5A0036D0E6 /* CustomTextField.swift in Sources */,
+				1CDDEE24290BE1CD0036D0E6 /* DescriptionViewController.swift in Sources */,
 				1CDDEE1C290BD7BF0036D0E6 /* NewOrderModel.swift in Sources */,
 				1CDDEE01290BD1AD0036D0E6 /* MainTabBarController.swift in Sources */,
 				1CDDEDBD290BC8620036D0E6 /* AppDelegate.swift in Sources */,
