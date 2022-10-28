@@ -82,6 +82,7 @@
 			children = (
 				1CDDEDD9290BCAFB0036D0E6 /* SignInModule */,
 				1CDDEDE8290BCB890036D0E6 /* SignUpModule */,
+				1CDDEDFC290BCF200036D0E6 /* MainModule */,
 				1CDDEDF2290BCBA30036D0E6 /* ForgotModule */,
 				1CDDEDE3290BCB5A0036D0E6 /* Extension */,
 				1CDDEDD8290BCA6B0036D0E6 /* Application */,
@@ -208,6 +209,37 @@
 			isa = PBXGroup;
 			children = (
 				1CDDEDF8290BCBA30036D0E6 /* ForgotViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1CDDEDFC290BCF200036D0E6 /* MainModule */ = {
+			isa = PBXGroup;
+			children = (
+				1CDDEDFF290BCF4A0036D0E6 /* View */,
+				1CDDEDFE290BCF420036D0E6 /* ViewModel */,
+				1CDDEDFD290BCF360036D0E6 /* Model */,
+			);
+			path = MainModule;
+			sourceTree = "<group>";
+		};
+		1CDDEDFD290BCF360036D0E6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1CDDEDFE290BCF420036D0E6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1CDDEDFF290BCF4A0036D0E6 /* View */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = View;
 			sourceTree = "<group>";
