@@ -14,11 +14,6 @@ class DescriptionViewController: UIViewController {
     let viewModel = DescriptionViewModel()
     let disposeBag = DisposeBag()
     
-    private lazy var backButton: UIButton = {
-        let view = UIButton()
-        view.setImage(UIImage(named: "back"), for: .normal)
-        return view
-    }()
     private lazy var mainTitleLabel: UILabel = {
         let label = UILabel()
         label.text = "Order"
@@ -77,6 +72,7 @@ class DescriptionViewController: UIViewController {
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
+        customBackButtonNav()
         setupViews()
         setupConstraints()
         backButtonPressed()
@@ -122,7 +118,6 @@ class DescriptionViewController: UIViewController {
     private func setupViews() {
         view.backgroundColor = .white
         
-        view.addSubview(backButton)
         view.addSubview(mainTitleLabel)
         view.addSubview(titleLabel)
         view.addSubview(fromWhereLabel)
@@ -131,62 +126,63 @@ class DescriptionViewController: UIViewController {
         view.addSubview(heightLabel)
         view.addSubview(weightLabel)
         view.addSubview(descriptionLabel)
+        navigationItem.backButtonTitle = ""
+        
     }
     private func setupConstraints() {
-        backButton.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(15)
-            make.leading.equalTo(view.snp.leading).offset(15)
-            
-            mainTitleLabel.snp.makeConstraints { make in
-                make.top.equalTo(backButton.snp.bottom).offset(30)
-                make.centerX.equalToSuperview()
-            }
-            
-            titleLabel.snp.makeConstraints { make in
-                make.top.equalTo(mainTitleLabel.snp.bottom).offset(20)
-                make.leading.equalToSuperview().offset(20)
-                make.trailing.equalToSuperview().offset(-20)
-            }
-            fromWhereLabel.snp.makeConstraints { make in
-                make.top.equalTo(titleLabel.snp.bottom).offset(50)
-                make.leading.equalToSuperview().offset(20)
-                make.trailing.equalToSuperview().offset(-20)
-            }
-            whereLabel.snp.makeConstraints { make in
-                make.top.equalTo(fromWhereLabel.snp.bottom).offset(50)
-                make.leading.equalToSuperview().offset(20)
-                make.trailing.equalToSuperview().offset(-20)
-            }
-            widthLabel.snp.makeConstraints { make in
-                make.top.equalTo(whereLabel.snp.bottom).offset(50)
-                make.leading.equalToSuperview().offset(20)
-                make.trailing.equalToSuperview().offset(-20)
-            }
-            heightLabel.snp.makeConstraints { make in
-                make.top.equalTo(widthLabel.snp.bottom).offset(50)
-                make.leading.equalToSuperview().offset(20)
-                make.trailing.equalToSuperview().offset(-20)
-            }
-            weightLabel.snp.makeConstraints { make in
-                make.top.equalTo(heightLabel.snp.bottom).offset(50)
-                make.leading.equalToSuperview().offset(20)
-                make.trailing.equalToSuperview().offset(-20)
-            }
-            descriptionLabel.snp.makeConstraints { make in
-                make.top.equalTo(weightLabel.snp.bottom).offset(50)
-                make.leading.equalToSuperview().offset(20)
-                make.trailing.equalToSuperview().offset(-20)
-            }
-
+        mainTitleLabel.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(40)
+            make.centerX.equalToSuperview()
         }
+        
+        titleLabel.snp.makeConstraints { make in
+            make.top.equalTo(mainTitleLabel.snp.bottom).offset(20)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+        }
+        fromWhereLabel.snp.makeConstraints { make in
+            make.top.equalTo(titleLabel.snp.bottom).offset(50)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+        }
+        whereLabel.snp.makeConstraints { make in
+            make.top.equalTo(fromWhereLabel.snp.bottom).offset(50)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+        }
+        widthLabel.snp.makeConstraints { make in
+            make.top.equalTo(whereLabel.snp.bottom).offset(50)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+        }
+        heightLabel.snp.makeConstraints { make in
+            make.top.equalTo(widthLabel.snp.bottom).offset(50)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+        }
+        weightLabel.snp.makeConstraints { make in
+            make.top.equalTo(heightLabel.snp.bottom).offset(50)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+        }
+        descriptionLabel.snp.makeConstraints { make in
+            make.top.equalTo(weightLabel.snp.bottom).offset(50)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+        }
+        
+    }
+    private func customBackButtonNav() {
+        
+        let customBackButton = UIImage(named: "back")
+        self.navigationController?.navigationBar.backIndicatorImage = customBackButton
+        self.navigationController?.navigationBar.tintColor = .black
+        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = customBackButton
+        navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: nil, style: .plain, target: self, action: nil)
+        
     }
     private func backButtonPressed() {
-        backButton
-            .rx
-            .tap
-            .bind {
-                
-            }.disposed(by: disposeBag)
+        let mainVC = MainViewController()
+        navigationController?.popToViewController(mainVC, animated: true)
     }
-    
 }

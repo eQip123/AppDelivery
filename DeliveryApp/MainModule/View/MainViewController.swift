@@ -78,7 +78,7 @@ extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.getOrder(name: viewModel.list.value[indexPath.row].name!, fromWhere: viewModel.list.value[indexPath.row].fromWhere!, toWhere: viewModel.list.value[indexPath.row].toWhere!, width: viewModel.list.value[indexPath.row].width!, height: viewModel.list.value[indexPath.row].height!, weight: viewModel.list.value[indexPath.row].weight!, comment: viewModel.list.value[indexPath.row].comment!)
         let descriptionVC = DescriptionViewController()
-        descriptionVC.modalPresentationStyle = .fullScreen
-        present(descriptionVC, animated: true)
+        self.navigationItem.title = ""
+        navigationController?.pushViewController(descriptionVC, animated: true)
     }
 }
