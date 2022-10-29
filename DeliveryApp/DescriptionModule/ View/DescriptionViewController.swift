@@ -25,49 +25,49 @@ class DescriptionViewController: UIViewController {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Наименование"
-        label.textColor = #colorLiteral(red: 0.8505133986, green: 0.8505132794, blue: 0.8505132794, alpha: 1)
+        label.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         return label
     }()
     
     private lazy var fromWhereLabel: UILabel = {
         let label = UILabel()
         label.text = "Откуда"
-        label.textColor = #colorLiteral(red: 0.8505133986, green: 0.8505132794, blue: 0.8505132794, alpha: 1)
+        label.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         return label
     }()
     
     private lazy var whereLabel: UILabel = {
         let label = UILabel()
         label.text = "Куда"
-        label.textColor = #colorLiteral(red: 0.8505133986, green: 0.8505132794, blue: 0.8505132794, alpha: 1)
+        label.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         return label
     }()
     
     private lazy var widthLabel: UILabel = {
         let label = UILabel()
         label.text = "Ширина"
-        label.textColor = #colorLiteral(red: 0.8505133986, green: 0.8505132794, blue: 0.8505132794, alpha: 1)
+        label.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         return label
     }()
     
     private lazy var heightLabel: UILabel = {
         let label = UILabel()
         label.text = "Высота"
-        label.textColor = #colorLiteral(red: 0.8505133986, green: 0.8505132794, blue: 0.8505132794, alpha: 1)
+        label.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         return label
     }()
     
     private lazy var weightLabel: UILabel = {
         let label = UILabel()
         label.text = "Вес, кг"
-        label.textColor = #colorLiteral(red: 0.8505133986, green: 0.8505132794, blue: 0.8505132794, alpha: 1)
+        label.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         return label
     }()
     
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.text = "Комментарий..."
-        label.textColor = #colorLiteral(red: 0.8505133986, green: 0.8505132794, blue: 0.8505132794, alpha: 1)
+        label.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         return label
     }()
     override func viewDidLoad() {
