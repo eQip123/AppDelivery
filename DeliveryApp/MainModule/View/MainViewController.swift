@@ -56,7 +56,7 @@ class MainViewController: UIViewController {
             make.top.equalTo(givingShine.snp.bottom).offset(20)
             make.leading.equalToSuperview().offset(22)
             make.trailing.equalToSuperview().offset(-22)
-            make.bottom.equalToSuperview().offset(-4)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-50)
         }
     }
 }
