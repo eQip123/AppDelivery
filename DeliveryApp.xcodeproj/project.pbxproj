@@ -34,6 +34,8 @@
 		1CDDEE20290BDF5B0036D0E6 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDDEE1F290BDF5B0036D0E6 /* TableViewCell.swift */; };
 		1CDDEE24290BE1CD0036D0E6 /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDDEE23290BE1CD0036D0E6 /* DescriptionViewController.swift */; };
 		AD574E8F290D34A100EB9F41 /* dataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AD574E8D290D34A100EB9F41 /* dataBase.xcdatamodeld */; };
+		AD9FF4D4290D38C000DB9F93 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9FF4D3290D38C000DB9F93 /* MainViewModel.swift */; };
+		AD9FF4D6290D38CF00DB9F93 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9FF4D5290D38CF00DB9F93 /* MainModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +65,8 @@
 		1CDDEE1F290BDF5B0036D0E6 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		1CDDEE23290BE1CD0036D0E6 /* DescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
 		AD574E8E290D34A100EB9F41 /* dataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = dataBase.xcdatamodel; sourceTree = "<group>"; };
+		AD9FF4D3290D38C000DB9F93 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainViewModel.swift; path = DeliveryApp/MainViewModel.swift; sourceTree = SOURCE_ROOT; };
+		AD9FF4D5290D38CF00DB9F93 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainModel.swift; path = DeliveryApp/MainModel.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +252,7 @@
 		1CDDEDFD290BCF360036D0E6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AD9FF4D5290D38CF00DB9F93 /* MainModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -255,6 +260,7 @@
 		1CDDEDFE290BCF420036D0E6 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				AD9FF4D3290D38C000DB9F93 /* MainViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -430,6 +436,7 @@
 				1CDDEE20290BDF5B0036D0E6 /* TableViewCell.swift in Sources */,
 				1CDDEE1D290BD7BF0036D0E6 /* NewOrderViewController.swift in Sources */,
 				1CDDEDE7290BCB5A0036D0E6 /* SecondCustomTextField.swift in Sources */,
+				AD9FF4D6290D38CF00DB9F93 /* MainModel.swift in Sources */,
 				1CDDEDEF290BCB890036D0E6 /* SignUpViewModel.swift in Sources */,
 				1CDDEDF0290BCB890036D0E6 /* SignUpModel.swift in Sources */,
 				1CDDEE09290BD41E0036D0E6 /* HistoryViewController.swift in Sources */,
@@ -443,6 +450,7 @@
 				1CDDEDBD290BC8620036D0E6 /* AppDelegate.swift in Sources */,
 				1CDDEDBF290BC8620036D0E6 /* SceneDelegate.swift in Sources */,
 				AD574E8F290D34A100EB9F41 /* dataBase.xcdatamodeld in Sources */,
+				AD9FF4D4290D38C000DB9F93 /* MainViewModel.swift in Sources */,
 				1CDDEDE1290BCAFB0036D0E6 /* SignInModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
