@@ -91,7 +91,7 @@ class DescriptionViewController: UIViewController {
     
     private func bindViewModel() {
         viewModel.name
-            .bind(to: mainTitleLabel.rx.text)
+            .bind(to: titleLabel.rx.text)
             .disposed(by: disposeBag)
         
         viewModel.fromWhere
