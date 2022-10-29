@@ -4,9 +4,16 @@
 //
 //  Created by Aidar Asanakunov on 28/10/22.
 //
-
+import Foundation
 import UIKit
+import SnapKit
+import RxSwift
+import RxCocoa
+import RxRelay
 class MainViewController: UIViewController {
+    
+    let disposeBag = DisposeBag()
+    let viewModel = MainViewModel()
     
     private lazy var givingShine: UIImageView = {
         let view = UIImageView(image: UIImage(named: "shine"))
@@ -27,6 +34,12 @@ class MainViewController: UIViewController {
         setupConstraints()
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.didGetOrderList()
+        tableView.reloadData()
     }
     func setupViews() {
         view.backgroundColor = .white
@@ -49,20 +62,21 @@ class MainViewController: UIViewController {
 }
 extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return viewModel.list.value.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? MainTableViewCell else {
             return UITableViewCell()
         }
-        cell.firstTitleLabel.text = "Aidar"
-        cell.secondTitleLabel.text = "Aidar"
+        cell.firstTitleLabel.text = "\(viewModel.list.value[indexPath.row].name ?? "gg")"
+        cell.secondTitleLabel.text = "\(viewModel.list.value[indexPath.row].fromWhere ?? "afas") - \(viewModel.list.value[indexPath.row].toWhere ?? "asdaf")"
         return cell
     }
 }
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.getOrder(name: viewModel.list.value[indexPath.row].name!, fromWhere: viewModel.list.value[indexPath.row].fromWhere!, toWhere: viewModel.list.value[indexPath.row].toWhere!, width: viewModel.list.value[indexPath.row].width!, height: viewModel.list.value[indexPath.row].height!, weight: viewModel.list.value[indexPath.row].weight!, comment: viewModel.list.value[indexPath.row].comment!)
         let descriptionVC = DescriptionViewController()
         descriptionVC.modalPresentationStyle = .fullScreen
         present(descriptionVC, animated: true)

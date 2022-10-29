@@ -123,8 +123,60 @@ class NewOrderViewController: UIViewController {
         super.viewDidLoad()
         setupViews()
         setupConstraints()
-        
+        bindViewModel()
     }
+    
+    private func bindViewModel() {
+        nameTextField.rx
+            .text
+            .orEmpty
+            .bind(to: viewModel.name)
+            .disposed(by: disposeBag)
+        
+        fromWhereTextField.rx
+            .text
+            .orEmpty
+            .bind(to: viewModel.fromWhere)
+            .disposed(by: disposeBag)
+        
+        toWhereTextField.rx
+            .text
+            .orEmpty
+            .bind(to: viewModel.toWhere)
+            .disposed(by: disposeBag)
+        
+        widthTextField.rx
+            .text
+            .orEmpty
+            .bind(to: viewModel.width)
+            .disposed(by: disposeBag)
+        
+        heightTextField.rx
+            .text
+            .orEmpty
+            .bind(to: viewModel.height)
+            .disposed(by: disposeBag)
+        
+        weightTextField.rx
+            .text
+            .orEmpty
+            .bind(to: viewModel.weight)
+            .disposed(by: disposeBag)
+        
+        commentTextField.rx
+            .text
+            .orEmpty
+            .bind(to: viewModel.comment)
+            .disposed(by: disposeBag)
+        
+        createButton.rx
+            .tap
+            .bind {[weak self] _ in
+                self?.viewModel.saveOrder()
+            }
+            .disposed(by: disposeBag)
+    }
+    
     private func setupViews() {
         
         view.backgroundColor = .white

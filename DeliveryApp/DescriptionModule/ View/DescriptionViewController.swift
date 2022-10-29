@@ -11,7 +11,9 @@ import RxCocoa
 import SnapKit
 class DescriptionViewController: UIViewController {
     
+    let viewModel = DescriptionViewModel()
     let disposeBag = DisposeBag()
+    
     private lazy var backButton: UIButton = {
         let view = UIButton()
         view.setImage(UIImage(named: "back"), for: .normal)
@@ -78,7 +80,45 @@ class DescriptionViewController: UIViewController {
         setupViews()
         setupConstraints()
         backButtonPressed()
+        bindViewModel()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.getOrder()
+        bindViewModel()
+    }
+    
+    private func bindViewModel() {
+        viewModel.name
+            .bind(to: mainTitleLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        viewModel.fromWhere
+            .bind(to: fromWhereLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        viewModel.toWhere
+            .bind(to: whereLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        viewModel.width
+            .bind(to: widthLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        viewModel.height
+            .bind(to: heightLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        viewModel.weight
+            .bind(to: weightLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        viewModel.comment
+            .bind(to: descriptionLabel.rx.text)
+            .disposed(by: disposeBag)
+    }
+    
     private func setupViews() {
         view.backgroundColor = .white
         
