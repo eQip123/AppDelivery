@@ -33,6 +33,7 @@
 		1CDDEE1D290BD7BF0036D0E6 /* NewOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDDEE1A290BD7BF0036D0E6 /* NewOrderViewController.swift */; };
 		1CDDEE20290BDF5B0036D0E6 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDDEE1F290BDF5B0036D0E6 /* TableViewCell.swift */; };
 		1CDDEE24290BE1CD0036D0E6 /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDDEE23290BE1CD0036D0E6 /* DescriptionViewController.swift */; };
+		AD574E8F290D34A100EB9F41 /* dataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AD574E8D290D34A100EB9F41 /* dataBase.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		1CDDEE1A290BD7BF0036D0E6 /* NewOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewOrderViewController.swift; sourceTree = "<group>"; };
 		1CDDEE1F290BDF5B0036D0E6 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		1CDDEE23290BE1CD0036D0E6 /* DescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
+		AD574E8E290D34A100EB9F41 /* dataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = dataBase.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				1CDDEDC5290BC8630036D0E6 /* Assets.xcassets */,
 				1CDDEDC7290BC8630036D0E6 /* LaunchScreen.storyboard */,
 				1CDDEDCA290BC8630036D0E6 /* Info.plist */,
+				AD574E8D290D34A100EB9F41 /* dataBase.xcdatamodeld */,
 			);
 			path = DeliveryApp;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				1CDDEE01290BD1AD0036D0E6 /* MainTabBarController.swift in Sources */,
 				1CDDEDBD290BC8620036D0E6 /* AppDelegate.swift in Sources */,
 				1CDDEDBF290BC8620036D0E6 /* SceneDelegate.swift in Sources */,
+				AD574E8F290D34A100EB9F41 /* dataBase.xcdatamodeld in Sources */,
 				1CDDEDE1290BCAFB0036D0E6 /* SignInModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -684,6 +688,19 @@
 			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		AD574E8D290D34A100EB9F41 /* dataBase.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AD574E8E290D34A100EB9F41 /* dataBase.xcdatamodel */,
+			);
+			currentVersion = AD574E8E290D34A100EB9F41 /* dataBase.xcdatamodel */;
+			path = dataBase.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1CDDEDB1290BC8620036D0E6 /* Project object */;
 }
