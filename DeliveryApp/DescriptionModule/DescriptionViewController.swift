@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 import SnapKit
 class DescriptionViewController: UIViewController {
     
+    let disposeBag = DisposeBag()
     private lazy var backButton: UIButton = {
         let view = UIButton()
         view.setImage(UIImage(named: "back"), for: .normal)
@@ -74,6 +77,7 @@ class DescriptionViewController: UIViewController {
         super.viewDidLoad()
         setupViews()
         setupConstraints()
+        backButtonPressed()
     }
     private func setupViews() {
         view.backgroundColor = .white
@@ -136,6 +140,13 @@ class DescriptionViewController: UIViewController {
 
         }
     }
-
+    private func backButtonPressed() {
+        backButton
+            .rx
+            .tap
+            .bind {
+                
+            }.disposed(by: disposeBag)
+    }
     
 }
