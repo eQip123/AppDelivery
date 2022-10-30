@@ -124,6 +124,10 @@ class SignUpViewController: UIViewController {
             .disposed(by: disposeBag)
     }
     
+    }
+//MARK: - SetupViews
+extension SignUpViewController {
+    
     private func setupNavigation() {
         navigationController?.navigationBar.tintColor = .black
     }
@@ -191,5 +195,5 @@ class SignUpViewController: UIViewController {
             make.width.equalTo(180)
         }
     }
-    }
+}
     
