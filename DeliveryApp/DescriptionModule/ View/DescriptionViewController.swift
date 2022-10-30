@@ -11,8 +11,8 @@ import RxCocoa
 import SnapKit
 class DescriptionViewController: UIViewController {
     
-    let viewModel = DescriptionViewModel()
-    let disposeBag = DisposeBag()
+    private let  viewModel = DescriptionViewModel()
+    private let  disposeBag = DisposeBag()
     
     private lazy var mainTitleLabel: UILabel = {
         let label = UILabel()
@@ -86,6 +86,7 @@ class DescriptionViewController: UIViewController {
     }
     
     private func bindViewModel() {
+        
         viewModel.name
             .bind(to: titleLabel.rx.text)
             .disposed(by: disposeBag)
@@ -113,7 +114,23 @@ class DescriptionViewController: UIViewController {
         viewModel.comment
             .bind(to: descriptionLabel.rx.text)
             .disposed(by: disposeBag)
+        
     }
+    private func customBackButtonNav() {
+        
+        let customBackButton = UIImage(named: "back")
+        self.navigationController?.navigationBar.backIndicatorImage = customBackButton
+        self.navigationController?.navigationBar.tintColor = .black
+        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = customBackButton
+        navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: nil, style: .plain, target: self, action: nil)
+        
+    }
+    private func backButtonPressed() {
+        let mainVC = MainViewController()
+        navigationController?.popToViewController(mainVC, animated: true)
+    }
+}
+extension DescriptionViewController {
     
     private func setupViews() {
         view.backgroundColor = .white
@@ -171,18 +188,5 @@ class DescriptionViewController: UIViewController {
             make.trailing.equalToSuperview().offset(-20)
         }
         
-    }
-    private func customBackButtonNav() {
-        
-        let customBackButton = UIImage(named: "back")
-        self.navigationController?.navigationBar.backIndicatorImage = customBackButton
-        self.navigationController?.navigationBar.tintColor = .black
-        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = customBackButton
-        navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: nil, style: .plain, target: self, action: nil)
-        
-    }
-    private func backButtonPressed() {
-        let mainVC = MainViewController()
-        navigationController?.popToViewController(mainVC, animated: true)
     }
 }
