@@ -177,6 +177,9 @@ class NewOrderViewController: UIViewController {
             }
             .disposed(by: disposeBag)
     }
+        
+}
+extension NewOrderViewController {
     
     private func setupViews() {
         
@@ -255,5 +258,4 @@ class NewOrderViewController: UIViewController {
             make.height.equalTo(83)
         }
     }
-    
 }
