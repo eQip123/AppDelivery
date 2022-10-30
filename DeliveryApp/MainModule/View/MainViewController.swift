@@ -41,24 +41,7 @@ class MainViewController: UIViewController {
         viewModel.didGetOrderList()
         tableView.reloadData()
     }
-    private func setupViews() {
-        view.backgroundColor = .white
-        view.addSubview(givingShine)
-        view.addSubview(tableView)
-    }
-    private func setupConstraints() {
-        givingShine.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(60)
-            make.left.equalToSuperview().offset(22)
-        }
-        
-        tableView.snp.makeConstraints { make in
-            make.top.equalTo(givingShine.snp.bottom).offset(20)
-            make.leading.equalToSuperview().offset(22)
-            make.trailing.equalToSuperview().offset(-22)
-            make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-50)
-        }
-    }
+    
 }
 extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -82,5 +65,27 @@ extension MainViewController: UITableViewDelegate {
         let descriptionVC = DescriptionViewController()
         self.navigationItem.title = ""
         navigationController?.pushViewController(descriptionVC, animated: true)
+    }
+}
+//MARK: - Setup Constraints && Views
+extension MainViewController {
+    
+    private func setupViews() {
+        view.backgroundColor = .white
+        view.addSubview(givingShine)
+        view.addSubview(tableView)
+    }
+    private func setupConstraints() {
+        givingShine.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(60)
+            make.left.equalToSuperview().offset(22)
+        }
+        
+        tableView.snp.makeConstraints { make in
+            make.top.equalTo(givingShine.snp.bottom).offset(20)
+            make.leading.equalToSuperview().offset(22)
+            make.trailing.equalToSuperview().offset(-22)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-50)
+        }
     }
 }

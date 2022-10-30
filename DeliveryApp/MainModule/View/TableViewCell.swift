@@ -11,7 +11,6 @@ class MainTableViewCell: UITableViewCell {
         let title = UILabel()
         title.textColor = .black
         title.numberOfLines = 1
-//        title.text = "Наименование"
         title.font = .systemFont(ofSize: 17, weight: .bold)
         return title
     }()
@@ -20,7 +19,6 @@ class MainTableViewCell: UITableViewCell {
         title.textColor = .gray
         title.numberOfLines = 1
         title.font = .systemFont(ofSize: 17, weight: .bold)
-//        title.text = "Откуда - Куда"
         return title
     }()
     
