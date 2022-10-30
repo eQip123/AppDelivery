@@ -9,6 +9,11 @@ class HistoryViewModel {
     
     init() {
         binding()
+        
+    }
+    
+    func didGetList() {
+        model.getList()
     }
     
     func binding() {
