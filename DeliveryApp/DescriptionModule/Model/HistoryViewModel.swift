@@ -21,4 +21,7 @@ class HistoryViewModel {
             .bind(to: list)
             .disposed(by: disposeBag)
     }
+    func saveOrder() {
+        model.getOrderList()
+    }
 }

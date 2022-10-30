@@ -32,7 +32,7 @@ class HistoryViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewModel.didGetList()
+        viewModel.saveOrder()
         tableView.reloadData()
     }
     
@@ -59,12 +59,17 @@ extension HistoryViewController: UITableViewDelegate {
 
 extension HistoryViewController {
     func setupViews() {
+        navigationController?.navigationBar.isHidden = true
+        view.backgroundColor = .white
         view.addSubview(tableView)
     }
     func setupConstraints() {
         
         tableView.snp.makeConstraints { make in
-            make.top.trailing.leading.bottom.equalToSuperview()
+            make.top.equalTo(view.safeAreaLayoutGuide).inset(30)
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-50)
         }
     }
 
