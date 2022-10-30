@@ -12,7 +12,7 @@ import RxRelay
 
 class HistoryViewController: UIViewController {
     
-    let viewModel = HistoryViewModel()
+    private let viewModel = HistoryViewModel()
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -36,15 +36,6 @@ class HistoryViewController: UIViewController {
         tableView.reloadData()
     }
     
-    func setupViews() {
-        view.addSubview(tableView)
-    }
-    func setupConstraints() {
-        
-        tableView.snp.makeConstraints { make in
-            make.top.trailing.leading.bottom.equalToSuperview()
-        }
-    }
 }
 extension HistoryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -64,4 +55,17 @@ extension HistoryViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+}
+
+extension HistoryViewController {
+    func setupViews() {
+        view.addSubview(tableView)
+    }
+    func setupConstraints() {
+        
+        tableView.snp.makeConstraints { make in
+            make.top.trailing.leading.bottom.equalToSuperview()
+        }
+    }
+
 }

@@ -5,7 +5,7 @@ import RxRelay
 class HistoryViewModel {
     let model = HistoryModel()
     let list = BehaviorRelay<[Order]>(value: [])
-    let disposeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
     
     init() {
         binding()
