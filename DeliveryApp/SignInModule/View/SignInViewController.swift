@@ -119,6 +119,56 @@ class SignInViewController: UIViewController {
             .disposed(by: disposeBag)
             
     }
+   
+    private func signIn() {
+        
+        signInButton.rx
+            .tap
+            .bind {[weak self] _ in
+                
+                self?.viewModel.getSavedData()
+                
+                self?.viewModel.canLogIn()
+                
+                if self?.viewModel.status.value == true {
+                    
+                    let mainTabBarController = MainTabBarController()
+                    self?.navigationController?.pushViewController(mainTabBarController, animated: true)
+                    
+                } else {
+                    self?.present((self?.viewModel.alertModule()) ?? UIAlertController(), animated: true, completion: nil)
+                }
+            }
+            .disposed(by: disposeBag)
+        
+    }
+    private func signUp() {
+        
+        signUpButton
+            .rx
+            .tap
+            .bind {
+                
+                let signUpViewController = SignUpViewController()
+                self.navigationController?.pushViewController(signUpViewController, animated: true)
+                
+            }.disposed(by: disposeBag)
+        
+    }
+    private func forgotPassword() {
+        forgotButton
+            .rx
+            .tap
+            .bind {
+                
+                let forgotPassword = ForgotViewController()
+                self.navigationController?.pushViewController(forgotPassword, animated: true)
+                
+            }.disposed(by: disposeBag)
+    }
+}
+extension SignInViewController {
+    
     private func setupViews() {
         
         view.backgroundColor = .white
@@ -189,42 +239,5 @@ class SignInViewController: UIViewController {
             make.top.equalTo(signInButton.snp.bottom).offset(15)
             make.centerX.equalToSuperview()
         }
-    }
-    private func signIn() {
-        
-        signInButton.rx
-            .tap
-            .bind {[weak self] _ in
-                self?.viewModel.getSavedData()
-                self?.viewModel.canLogIn()
-                if self?.viewModel.status.value == true {
-                    let mainTabBarController = MainTabBarController()
-                    self?.navigationController?.pushViewController(mainTabBarController, animated: true)
-                } else {
-                    self?.present((self?.viewModel.alertModule()) ?? UIAlertController(), animated: true, completion: nil)
-                }
-            }
-            .disposed(by: disposeBag)
-        
-    }
-    private func signUp() {
-        
-        signUpButton
-            .rx
-            .tap
-            .bind {
-                let signUpViewController = SignUpViewController()
-                self.navigationController?.pushViewController(signUpViewController, animated: true)
-            }.disposed(by: disposeBag)
-        
-    }
-    private func forgotPassword() {
-        forgotButton
-            .rx
-            .tap
-            .bind{
-                let forgotPassword = ForgotViewController()
-                self.navigationController?.pushViewController(forgotPassword, animated: true)
-            }.disposed(by: disposeBag)
     }
 }
