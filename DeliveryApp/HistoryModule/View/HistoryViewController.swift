@@ -59,7 +59,6 @@ extension HistoryViewController: UITableViewDelegate {
 
 extension HistoryViewController {
     func setupViews() {
-        navigationController?.navigationBar.isHidden = true
         view.backgroundColor = .white
         view.addSubview(tableView)
     }
