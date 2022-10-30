@@ -9,7 +9,7 @@ class NewOrderModel {
      
     func add(name: String, fromWhere: String, toWhere: String, width: String, height: String, weight: String, comment: String) {
         
-        var order = Order(context: context)
+        let order = Order(context: context)
         
         order.name = name
         order.fromWhere = fromWhere
