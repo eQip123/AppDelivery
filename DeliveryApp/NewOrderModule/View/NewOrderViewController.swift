@@ -106,11 +106,7 @@ class NewOrderViewController: UIViewController {
         return view
     }()
     
-    private lazy var backButton: UIButton = {
-        let view = UIButton()
-        view.setImage(UIImage(named: "back"), for: .normal)
-        return view
-    }()
+
     private lazy var newOrderlabel: UILabel = {
         let view = UILabel()
         view.text = "New Order"
@@ -185,7 +181,6 @@ extension NewOrderViewController {
         
         view.backgroundColor = .white
         view.addSubview(createButton)
-        view.addSubview(backButton)
         view.addSubview(newOrderlabel)
         view.addSubview(nameTextField)
         view.addSubview(fromWhereTextField)
@@ -204,10 +199,6 @@ extension NewOrderViewController {
             make.centerX.equalToSuperview()
         }
         
-        backButton.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(22)
-            make.top.equalToSuperview().offset(69)
-        }
         newOrderlabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(86)
             make.centerX.equalToSuperview()
