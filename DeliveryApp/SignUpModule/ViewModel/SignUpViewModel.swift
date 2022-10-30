@@ -16,7 +16,7 @@ class SignUpViewModel {
         bindModel()
     }
     
-    func bindModel() {
+    private func bindModel() {
         model.status
             .bind(to: status)
             .disposed(by: disposeBag)

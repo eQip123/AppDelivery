@@ -12,8 +12,8 @@ import RxCocoa
 import UIKit
 class ForgotViewController: UIViewController {
     
-    let disposeBag = DisposeBag()
-    let viewModel = ForgotViewModel()
+    private let disposeBag = DisposeBag()
+    private let viewModel = ForgotViewModel()
     
     private lazy var titleLabel: UILabel = {
         let title = UILabel()
@@ -64,6 +64,7 @@ class ForgotViewController: UIViewController {
             .bind(to: viewModel.email)
             .disposed(by: disposeBag)
     }
+    
     private func setupViews() {
         view.backgroundColor = .white
         
@@ -105,7 +106,7 @@ class ForgotViewController: UIViewController {
         confirmButton.rx
             .tap
             .bind {[weak self] _ in
-                self?.viewModel.updateData()
+                self?.viewModel.updateSavedData()
                 self?.viewModel.isCorrectEmail()
                 
                 if self?.viewModel.status.value == true {
