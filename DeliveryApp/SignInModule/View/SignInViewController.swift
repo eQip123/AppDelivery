@@ -15,6 +15,8 @@ class SignInViewController: UIViewController {
     private let disposeBag = DisposeBag()
     private let viewModel = SignInViewModel()
     
+    // gg
+    
     private lazy var imageLogo: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "logo")
