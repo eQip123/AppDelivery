@@ -34,7 +34,7 @@ class MainModel {
         
     }
     
-    func saveHistoru(order: Order) {
+    func saveOrdHist(order: Order) {
         storage.historyOrders.append(order)
     }
 }

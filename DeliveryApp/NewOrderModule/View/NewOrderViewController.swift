@@ -13,8 +13,8 @@ import RxSwift
 
 
 class NewOrderViewController: UIViewController {
-    let disposeBag = DisposeBag()
-    let viewModel = NewOrderViewModel()
+    private let disposeBag = DisposeBag()
+    private let viewModel = NewOrderViewModel()
     
     private lazy var nameTextField: UITextField = {
         let view = SecondCustomTextField()

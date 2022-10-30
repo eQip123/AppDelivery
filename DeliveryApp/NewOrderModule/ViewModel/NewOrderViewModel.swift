@@ -12,6 +12,9 @@ import RxCocoa
 import UIKit
 
 class NewOrderViewModel {
+    private let disposeBag = DisposeBag()
+    private let model = NewOrderModel()
+    
     let name = BehaviorRelay<String>(value: "")
     let fromWhere = BehaviorRelay<String>(value: "")
     let toWhere = BehaviorRelay<String>(value: "")
@@ -19,9 +22,6 @@ class NewOrderViewModel {
     let height = BehaviorRelay<String>(value: "")
     let weight = BehaviorRelay<String>(value: "")
     let comment = BehaviorRelay<String>(value: "")
-    
-    let disposeBag = DisposeBag()
-    let model = NewOrderModel()
     
     func alertPres() -> UIAlertController {
         let alert = UIAlertController(title: "Успешно добавили", message: "Заказ добавлен добавлен в список", preferredStyle: .alert)
