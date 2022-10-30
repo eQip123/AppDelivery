@@ -5,7 +5,7 @@ import CoreData
 import UIKit
 
 class NewOrderModel {
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
      
     func add(name: String, fromWhere: String, toWhere: String, width: String, height: String, weight: String, comment: String) {
         

@@ -11,8 +11,8 @@ import RxCocoa
 import RxSwift
 class SignUpViewController: UIViewController {
     
-    let disposeBag = DisposeBag()
-    let viewModel = SignUpViewModel()
+    private let disposeBag = DisposeBag()
+    private let viewModel = SignUpViewModel()
     
     private lazy var titleLabel: UILabel = {
         let title = UILabel()
@@ -114,18 +114,19 @@ class SignUpViewController: UIViewController {
             .tap
             .bind {[weak self] _ in
                 self?.viewModel.getData()
-                self?.viewModel.checkData()
                 
                 if self?.viewModel.status.value == true {
                     self?.navigationController?.popViewController(animated: true)
                 } else {
-                    let alert = UIAlertController(title: "Ошибка", message: "Пароли не совпадают", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-                    self?.present(alert, animated: true, completion: nil)
+                    self?.present(self?.viewModel.alertPres() ?? UIAlertController(), animated: true, completion: nil)
                 }
             }
             .disposed(by: disposeBag)
     }
+    
+    }
+//MARK: - SetupViews
+extension SignUpViewController {
     
     private func setupNavigation() {
         navigationController?.navigationBar.tintColor = .black
@@ -194,5 +195,5 @@ class SignUpViewController: UIViewController {
             make.width.equalTo(180)
         }
     }
-    }
+}
     

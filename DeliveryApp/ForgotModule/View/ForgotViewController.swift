@@ -12,8 +12,8 @@ import RxCocoa
 import UIKit
 class ForgotViewController: UIViewController {
     
-    let disposeBag = DisposeBag()
-    let viewModel = ForgotViewModel()
+    private let disposeBag = DisposeBag()
+    private let viewModel = ForgotViewModel()
     
     private lazy var titleLabel: UILabel = {
         let title = UILabel()
@@ -58,12 +58,37 @@ class ForgotViewController: UIViewController {
     }
     
     private func bindingViewModel() {
+        
         emailTextField.rx
             .text
             .orEmpty
             .bind(to: viewModel.email)
             .disposed(by: disposeBag)
     }
+    
+    private func confirm() {
+        confirmButton.rx
+            .tap
+            .bind {[weak self] _ in
+                self?.viewModel.updateSavedData()
+                self?.viewModel.isCorrectEmail()
+                
+                if self?.viewModel.status.value == true {
+                    let alert = UIAlertController(title: "Ваш пароль", message: self?.viewModel.savedPass.value, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default))
+                    self?.present(alert, animated: true)
+                } else {
+                    let alert = UIAlertController(title: "Ошибка", message: "Такого email нет", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default))
+                    self?.present(alert, animated: true)
+                }
+            }
+            .disposed(by: disposeBag)
+    }
+    
+}
+extension ForgotViewController {
+    
     private func setupViews() {
         view.backgroundColor = .white
         
@@ -100,25 +125,4 @@ class ForgotViewController: UIViewController {
             make.width.equalTo(180)
         }
     }
-    
-    private func confirm() {
-        confirmButton.rx
-            .tap
-            .bind {[weak self] _ in
-                self?.viewModel.updateData()
-                self?.viewModel.isCorrectEmail()
-                
-                if self?.viewModel.status.value == true {
-                    let alert = UIAlertController(title: "Ваш пароль", message: self?.viewModel.savedPass.value, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .default))
-                    self?.present(alert, animated: true)
-                } else {
-                    let alert = UIAlertController(title: "Ошибка", message: "Такого email нет", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .default))
-                    self?.present(alert, animated: true)
-                }
-            }
-            .disposed(by: disposeBag)
-    }
-    
 }

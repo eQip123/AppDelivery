@@ -13,8 +13,8 @@ import RxSwift
 
 
 class NewOrderViewController: UIViewController {
-    let disposeBag = DisposeBag()
-    let viewModel = NewOrderViewModel()
+    private let disposeBag = DisposeBag()
+    private let viewModel = NewOrderViewModel()
     
     private lazy var nameTextField: UITextField = {
         let view = SecondCustomTextField()
@@ -106,11 +106,7 @@ class NewOrderViewController: UIViewController {
         return view
     }()
     
-    private lazy var backButton: UIButton = {
-        let view = UIButton()
-        view.setImage(UIImage(named: "back"), for: .normal)
-        return view
-    }()
+
     private lazy var newOrderlabel: UILabel = {
         let view = UILabel()
         view.text = "New Order"
@@ -173,15 +169,18 @@ class NewOrderViewController: UIViewController {
             .tap
             .bind {[weak self] _ in
                 self?.viewModel.saveOrder()
+                self?.present(self?.viewModel.alertPres() ?? UIAlertController(), animated: true, completion: nil)
             }
             .disposed(by: disposeBag)
     }
+        
+}
+extension NewOrderViewController {
     
     private func setupViews() {
         
         view.backgroundColor = .white
         view.addSubview(createButton)
-        view.addSubview(backButton)
         view.addSubview(newOrderlabel)
         view.addSubview(nameTextField)
         view.addSubview(fromWhereTextField)
@@ -200,10 +199,6 @@ class NewOrderViewController: UIViewController {
             make.centerX.equalToSuperview()
         }
         
-        backButton.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(22)
-            make.top.equalToSuperview().offset(69)
-        }
         newOrderlabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(86)
             make.centerX.equalToSuperview()
@@ -254,5 +249,4 @@ class NewOrderViewController: UIViewController {
             make.height.equalTo(83)
         }
     }
-    
 }

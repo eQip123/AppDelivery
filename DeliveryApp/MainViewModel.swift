@@ -3,16 +3,15 @@ import RxSwift
 import RxRelay
 
 class MainViewModel {
-    let model = MainModel()
-    let order = BehaviorRelay<Order>(value: Order())
+    private let model = MainModel()
+    private let disposeBag = DisposeBag()
     let list = BehaviorRelay<[Order]>(value: [])
-    let disposeBag = DisposeBag()
     
     init() {
         bindingModel()
     }
     
-    func bindingModel() {
+    private func bindingModel() {
         model.list
             .bind(to: list)
             .disposed(by: disposeBag)
@@ -24,5 +23,9 @@ class MainViewModel {
     
     func getOrder(name: String, fromWhere: String, toWhere: String, width: String, height: String, weight: String, comment: String) {
         model.getOrder(name: name, fromWhere: fromWhere, toWhere: toWhere, width: width, height: height, weight: weight, comment: comment)
+    }
+    
+    func getOrdForHist(order: Order) {
+        model.saveOrdHist(order: order)
     }
 }
