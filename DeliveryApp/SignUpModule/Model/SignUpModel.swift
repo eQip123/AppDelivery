@@ -10,7 +10,7 @@ class SignUpModel {
     
     func getData(sEmail : String, sPass: String, sSecPass: String) {
         
-        if sPass == sSecPass {
+        if sPass == sSecPass && sPass.isEmpty != true && sSecPass.isEmpty != true{
             userDefaults.setValue(sEmail, forKey: "email")
             userDefaults.setValue(sPass, forKey: "pass")
         } else {

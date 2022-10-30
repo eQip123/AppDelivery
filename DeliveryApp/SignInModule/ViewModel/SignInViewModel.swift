@@ -1,4 +1,5 @@
 import RxSwift
+import UIKit
 import RxRelay
 import RxCocoa
 import Foundation
@@ -17,6 +18,14 @@ class SignInViewModel {
         model.updateSavedData()
         savedEmail.accept(model.savedEmail.value)
         savedPass.accept(model.savedPass.value)
+    }
+    
+    func alertModule() -> UIAlertController {
+        let alert = UIAlertController(title: "Ошибка", message: "Неправильный логин или пароль", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        
+        return alert
+        
     }
     
     func canLogIn() {

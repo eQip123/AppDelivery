@@ -9,6 +9,7 @@ import Foundation
 import RxRelay
 import RxSwift
 import RxCocoa
+import UIKit
 
 class NewOrderViewModel {
     let name = BehaviorRelay<String>(value: "")
@@ -21,6 +22,13 @@ class NewOrderViewModel {
     
     let disposeBag = DisposeBag()
     let model = NewOrderModel()
+    
+    func alertPres() -> UIAlertController {
+        let alert = UIAlertController(title: "Успешно добавили", message: "Заказ добавлен добавлен в список", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        
+        return alert
+    }
     
     func saveOrder() {
         model.add(name: name.value, fromWhere: fromWhere.value, toWhere: toWhere.value, width: width.value, height: height.value, weight: weight.value, comment: comment.value)

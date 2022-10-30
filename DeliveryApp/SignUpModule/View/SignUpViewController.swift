@@ -119,9 +119,7 @@ class SignUpViewController: UIViewController {
                 if self?.viewModel.status.value == true {
                     self?.navigationController?.popViewController(animated: true)
                 } else {
-                    let alert = UIAlertController(title: "Ошибка", message: "Пароли не совпадают", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-                    self?.present(alert, animated: true, completion: nil)
+                    self?.present(self?.viewModel.alertPres() ?? UIAlertController(), animated: true, completion: nil)
                 }
             }
             .disposed(by: disposeBag)

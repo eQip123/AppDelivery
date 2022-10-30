@@ -173,6 +173,7 @@ class NewOrderViewController: UIViewController {
             .tap
             .bind {[weak self] _ in
                 self?.viewModel.saveOrder()
+                self?.present(self?.viewModel.alertPres() ?? UIAlertController(), animated: true, completion: nil)
             }
             .disposed(by: disposeBag)
     }
