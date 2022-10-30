@@ -13,7 +13,8 @@ import RxSwift
 class SignInViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
-    private let viewModel = SignInViewModel()
+    private lazy var viewModel = SignInViewModel()
+    
     
     private lazy var imageLogo: UIImageView = {
         let imageView = UIImageView()
