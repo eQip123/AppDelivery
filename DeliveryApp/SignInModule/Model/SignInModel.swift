@@ -9,8 +9,8 @@ class SignInModel {
     let status = BehaviorRelay<Bool>(value: false)
     
     func updateSavedData() {
-        savedEmail.accept(UserDefaults.standard.string(forKey: "email")!)
-        savedPass.accept(UserDefaults.standard.string(forKey: "pass")!)
+        savedEmail.accept(UserDefaults.standard.string(forKey: "email") ?? "")
+        savedPass.accept(UserDefaults.standard.string(forKey: "pass") ?? "")
     }
     
     func canLogIn(sEmail: String, sPass: String){

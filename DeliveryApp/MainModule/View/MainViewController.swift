@@ -63,7 +63,6 @@ extension MainViewController: UITableViewDelegate {
         
         viewModel.getOrdForHist(order: viewModel.list.value[indexPath.row])
         let descriptionVC = DescriptionViewController()
-        self.navigationItem.title = ""
         navigationController?.pushViewController(descriptionVC, animated: true)
     }
 }
