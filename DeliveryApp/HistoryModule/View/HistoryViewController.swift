@@ -62,8 +62,6 @@ extension HistoryViewController: UITableViewDataSource {
 }
 extension HistoryViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let descriptionVC = DescriptionViewController()
-        descriptionVC.modalPresentationStyle = .fullScreen
-        present(descriptionVC, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
