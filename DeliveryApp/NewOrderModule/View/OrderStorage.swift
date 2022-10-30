@@ -10,4 +10,6 @@ class OrderStorage {
     var height = ""
     var weight = ""
     var comment = ""
+    
+    var historyOrders: [Order] = []
 }

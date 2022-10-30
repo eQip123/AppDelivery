@@ -6,8 +6,13 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
+import RxRelay
 
 class HistoryViewController: UIViewController {
+    
+    let viewModel = HistoryViewModel()
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -24,6 +29,12 @@ class HistoryViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    
     func setupViews() {
         view.addSubview(tableView)
     }
@@ -36,15 +47,15 @@ class HistoryViewController: UIViewController {
 }
 extension HistoryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return viewModel.list.value.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? MainTableViewCell else {
             return UITableViewCell()
         }
-        cell.firstTitleLabel.text = "Aidar"
-        cell.secondTitleLabel.text = "Aidar"
+        cell.firstTitleLabel.text = "\(viewModel.list.value[indexPath.row].name ?? "gg")"
+        cell.secondTitleLabel.text = "\(viewModel.list.value[indexPath.row].fromWhere ?? "afas") - \(viewModel.list.value[indexPath.row].toWhere ?? "asdaf")"
         return cell
     }
 }

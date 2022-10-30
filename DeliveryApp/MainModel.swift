@@ -30,5 +30,11 @@ class MainModel {
         storage.height = height
         storage.weight = weight
         storage.comment = comment
+        
+        
+    }
+    
+    func saveHistoru(order: Order) {
+        storage.historyOrders.append(order)
     }
 }
