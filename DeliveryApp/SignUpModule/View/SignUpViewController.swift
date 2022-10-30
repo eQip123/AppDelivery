@@ -11,8 +11,8 @@ import RxCocoa
 import RxSwift
 class SignUpViewController: UIViewController {
     
-    let disposeBag = DisposeBag()
-    let viewModel = SignUpViewModel()
+    private let disposeBag = DisposeBag()
+    private let viewModel = SignUpViewModel()
     
     private lazy var titleLabel: UILabel = {
         let title = UILabel()
@@ -114,7 +114,6 @@ class SignUpViewController: UIViewController {
             .tap
             .bind {[weak self] _ in
                 self?.viewModel.getData()
-                self?.viewModel.checkData()
                 
                 if self?.viewModel.status.value == true {
                     self?.navigationController?.popViewController(animated: true)

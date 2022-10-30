@@ -5,8 +5,8 @@ import RxCocoa
 import Foundation
 
 class SignInViewModel {
-    let disposeBag = DisposeBag()
-    let model = SignInModel()
+    private let disposeBag = DisposeBag()
+    private let model = SignInModel()
     
     let email = BehaviorRelay<String>(value: "")
     let pass = BehaviorRelay<String>(value: "")
