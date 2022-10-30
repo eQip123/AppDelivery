@@ -41,12 +41,12 @@ class MainViewController: UIViewController {
         viewModel.didGetOrderList()
         tableView.reloadData()
     }
-    func setupViews() {
+    private func setupViews() {
         view.backgroundColor = .white
         view.addSubview(givingShine)
         view.addSubview(tableView)
     }
-    func setupConstraints() {
+    private func setupConstraints() {
         givingShine.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(60)
             make.left.equalToSuperview().offset(22)
