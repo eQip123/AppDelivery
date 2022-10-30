@@ -12,8 +12,8 @@ import RxSwift
 
 class SignInViewController: UIViewController {
     
-    private let disposeBag = DisposeBag()
-    private let viewModel = SignInViewModel()
+    let disposeBag = DisposeBag()
+    let viewModel = SignInViewModel()
     
     // gg
     
