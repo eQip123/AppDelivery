@@ -12,8 +12,8 @@ import RxCocoa
 import RxRelay
 class MainViewController: UIViewController {
     
-    let disposeBag = DisposeBag()
-    let viewModel = MainViewModel()
+    private let disposeBag = DisposeBag()
+    private let viewModel = MainViewModel()
     
     private lazy var givingShine: UIImageView = {
         let view = UIImageView(image: UIImage(named: "shine"))
@@ -41,12 +41,12 @@ class MainViewController: UIViewController {
         viewModel.didGetOrderList()
         tableView.reloadData()
     }
-    func setupViews() {
+    private func setupViews() {
         view.backgroundColor = .white
         view.addSubview(givingShine)
         view.addSubview(tableView)
     }
-    func setupConstraints() {
+    private func setupConstraints() {
         givingShine.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(60)
             make.left.equalToSuperview().offset(22)
@@ -78,7 +78,7 @@ extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.getOrder(name: viewModel.list.value[indexPath.row].name!, fromWhere: viewModel.list.value[indexPath.row].fromWhere!, toWhere: viewModel.list.value[indexPath.row].toWhere!, width: viewModel.list.value[indexPath.row].width!, height: viewModel.list.value[indexPath.row].height!, weight: viewModel.list.value[indexPath.row].weight!, comment: viewModel.list.value[indexPath.row].comment!)
         
-        viewModel.didGetOrder(order: viewModel.list.value[indexPath.row])
+        viewModel.getOrdForHist(order: viewModel.list.value[indexPath.row])
         let descriptionVC = DescriptionViewController()
         self.navigationItem.title = ""
         navigationController?.pushViewController(descriptionVC, animated: true)
