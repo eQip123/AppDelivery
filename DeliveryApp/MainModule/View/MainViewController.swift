@@ -41,6 +41,7 @@ class MainViewController: UIViewController {
         viewModel.didGetOrderList()
         tableView.reloadData()
     }
+
     
 }
 extension MainViewController: UITableViewDataSource {
@@ -76,7 +77,7 @@ extension MainViewController {
     }
     private func setupConstraints() {
         givingShine.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(60)
+            make.top.equalTo(view.safeAreaLayoutGuide)
             make.left.equalToSuperview().offset(22)
         }
         

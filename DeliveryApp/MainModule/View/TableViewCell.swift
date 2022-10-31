@@ -37,7 +37,7 @@ class MainTableViewCell: UITableViewCell {
     }
     override func prepareForReuse() {
          super.prepareForReuse()
-        print("prepare")
+       
     }
 
     
