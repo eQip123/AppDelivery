@@ -13,7 +13,7 @@ class MainTabBarController: UITabBarController {
         super.viewDidLoad()
         setTabBarAppearance()
         generateTabBar()
-        hideBackButton()
+        navigationItem()
     }
     
     private func generateTabBar() {
@@ -28,8 +28,15 @@ class MainTabBarController: UITabBarController {
         viewController.tabBarItem.image = image
         return viewController
     }
-    private func hideBackButton() {
-        navigationItem.setHidesBackButton(true, animated: true)
+    
+    private func navigationItem() {
+        self.navigationItem.hidesBackButton = true
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .plain, target: self, action: #selector(toSignVC))
+        navigationItem.rightBarButtonItem?.tintColor = .black
+   }
+    
+    @objc func toSignVC() {
+        navigationController?.popToRootViewController(animated: true)
     }
     private func setTabBarAppearance() {
         let appearance = UITabBarAppearance()

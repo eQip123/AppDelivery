@@ -104,7 +104,12 @@ class SignInViewController: UIViewController {
         forgotPassword()
         
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = true
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = false
+    }
     private func bindingViewModel() {
         emailTextField.rx
             .text
