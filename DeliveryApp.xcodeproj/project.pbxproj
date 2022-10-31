@@ -391,6 +391,7 @@
 		AD3F26842910208D00C82D74 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AD3F268A2910258D00C82D74 /* ChatTableViewCell.swift */,
 				AD3F2688291020D000C82D74 /* ChatViewController.swift */,
 			);
 			path = View;
@@ -400,7 +401,6 @@
 			isa = PBXGroup;
 			children = (
 				AD3F2686291020A100C82D74 /* ProfileViewController.swift */,
-				AD3F268A2910258D00C82D74 /* ChatTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
