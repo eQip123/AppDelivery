@@ -2,26 +2,30 @@ import RxCocoa
 import RxSwift
 import RxRelay
 import Foundation
+import FirebaseAuth
+import Firebase
 
 class SignUpModel {
     
-    private let userDefaults = UserDefaults.standard
     let status = BehaviorRelay<Bool>(value: false)
     
-    func checkData(sEmail: String, sPass: String, sSecPass: String) {
-        if sPass == sSecPass && sPass.isEmpty != true && sSecPass.isEmpty != true {
-            userDefaults.setValue(sEmail, forKey: "email")
-            userDefaults.setValue(sPass, forKey: "pass")
+    private func signUp(email: String, password: String, confirmPassword: String) {
+        if password == confirmPassword && password.isEmpty != true && confirmPassword.isEmpty != true {
+            Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+                if let error = error {
+                    print(error)
+                }
+            }
             status.accept(true)
         } else {
             status.accept(false)
         }
     }
     
-    func getData(sEmail : String, sPass: String, sSecPass: String) {
+    func getData(email : String, password: String, confirmPassword: String) {
         
-        checkData(sEmail: sEmail, sPass: sPass, sSecPass: sSecPass)
+        signUp(email: email, password: password, confirmPassword: confirmPassword)
         
     }
-                                        
+    
 }

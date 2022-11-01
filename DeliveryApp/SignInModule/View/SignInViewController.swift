@@ -37,7 +37,7 @@ class SignInViewController: UIViewController {
         textField.layer.cornerRadius = 25
         textField.layer.borderWidth = 1
         textField.placeholder = "Email"
-        textField.text = "Aidar2003@gmail.com"
+        textField.text = "aidar2003@gmail.com"
         return textField
     }()
     

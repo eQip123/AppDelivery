@@ -8,8 +8,8 @@ class SignUpViewModel {
     private let model = SignUpModel()
     
     let email = BehaviorRelay<String>(value: "")
-    let pass = BehaviorRelay<String>(value: "")
-    let secPass = BehaviorRelay<String>(value: "")
+    let password = BehaviorRelay<String>(value: "")
+    let confirmPassword = BehaviorRelay<String>(value: "")
     let status = BehaviorRelay<Bool>(value: false)
     
     init() {
@@ -23,7 +23,7 @@ class SignUpViewModel {
     }
     
     func getData() {
-        model.getData(sEmail: email.value, sPass: pass.value, sSecPass: secPass.value)
+        model.getData(email: email.value, password: password.value, confirmPassword: confirmPassword.value)
     }
     
     func alertPres() -> UIAlertController {

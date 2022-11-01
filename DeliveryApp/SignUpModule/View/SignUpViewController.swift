@@ -101,13 +101,13 @@ class SignUpViewController: UIViewController {
         passwordTextField.rx
             .text
             .orEmpty
-            .bind(to: viewModel.pass)
+            .bind(to: viewModel.password)
             .disposed(by: disposeBag)
         
         confirmPasswordTextField.rx
             .text
             .orEmpty
-            .bind(to: viewModel.secPass)
+            .bind(to: viewModel.confirmPassword)
             .disposed(by: disposeBag)
         
         signUpButton.rx
