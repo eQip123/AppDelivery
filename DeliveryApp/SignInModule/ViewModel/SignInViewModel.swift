@@ -28,6 +28,6 @@ class SignInViewModel {
     
     func canLogIn() {
         model.canLogIn(sEmail: email.value, sPass: pass.value)
-        print(model.status.value)
+//        print(model.status.value)
     }
 }

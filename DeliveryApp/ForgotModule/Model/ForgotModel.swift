@@ -2,6 +2,7 @@ import RxCocoa
 import RxRelay
 import RxSwift
 import Foundation
+import FirebaseAuth
 
 class ForgotModel {
     let savedEmail = BehaviorRelay<String>(value: "")

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class MainTabBarController: UITabBarController {
     
@@ -38,6 +39,12 @@ class MainTabBarController: UITabBarController {
    }
     
     @objc func toSignVC() {
+            do {
+                try Auth.auth().signOut()
+            }
+            catch let err {
+                print(err.localizedDescription)
+            }
         navigationController?.popToRootViewController(animated: true)
     }
     private func setTabBarAppearance() {
