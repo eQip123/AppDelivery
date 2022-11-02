@@ -132,16 +132,23 @@ class SignInViewController: UIViewController {
             .bind {[weak self] _ in
                 
                 self?.viewModel.canLogIn()
-
-                if self?.viewModel.status.value == true {
-
-                    let mainTabBarController = MainTabBarController()
-                    self?.navigationController?.pushViewController(mainTabBarController, animated: true)
-
-                } else {
-                    self?.present((self?.viewModel.getAlert()) ?? UIAlertController(), animated: true, completion: nil)
-                }
                 
+                _ = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false) { timer in
+                    print("Timer fired!")
+                    if self?.viewModel.status.value == true {
+
+                        let mainTabBarController = MainTabBarController()
+                        self?.navigationController?.pushViewController(mainTabBarController, animated: true)
+
+                    } else {
+                        self?.present((self?.viewModel.getAlert()) ?? UIAlertController(), animated: true, completion: nil)
+                    }
+                }
+
+                
+                
+//                let mainTabBarController = MainTabBarController()
+//                self?.navigationController?.pushViewController(mainTabBarController, animated: true)
             }
             .disposed(by: disposeBag)
         

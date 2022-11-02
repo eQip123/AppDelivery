@@ -6,14 +6,7 @@ import Foundation
 import FirebaseAuth
 
 class SignInModel {
-    let savedEmail = BehaviorRelay<String>(value: "")
-    let savedPass = BehaviorRelay<String>(value: "")
     let status = BehaviorRelay<Bool>(value: false)
-    
-    func updateSavedData() {
-        savedEmail.accept(UserDefaults.standard.string(forKey: "email") ?? "")
-        savedPass.accept(UserDefaults.standard.string(forKey: "pass") ?? "")
-    }
     
     func alertModule() -> UIAlertController {
         
@@ -25,15 +18,18 @@ class SignInModel {
     }
     
     func canLogIn(sEmail: String, sPass: String){
-        updateSavedData()
         Auth.auth().signIn(withEmail: sEmail, password: sPass) {[weak self] authResult, err in
             guard let strongSelf = self else {return}
             if let err = err {
-                self!.status.accept(false)
                 print(err.localizedDescription)
             }
-            self!.status.accept(true)
+            
+            if authResult != nil {
+                self!.status.accept(true)
+            } else {
+                self!.status.accept(false)
+            }
+           
         }
-//        status.accept(true)
     }
 }

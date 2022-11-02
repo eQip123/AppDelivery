@@ -48,7 +48,6 @@ class ChatViewController: UIViewController {
             .tap
             .bind{[weak self] _ in
                 self?.viewModel.sendMassage()
-                print(self?.viewModel.massages.value)
             }
             .disposed(by: disposeBag)
     }
@@ -102,3 +101,4 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     
     
 }
+
