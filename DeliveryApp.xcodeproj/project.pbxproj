@@ -42,6 +42,9 @@
 		AD3F2689291020D000C82D74 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3F2688291020D000C82D74 /* ChatViewController.swift */; };
 		AD3F268B2910258D00C82D74 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3F268A2910258D00C82D74 /* ChatTableViewCell.swift */; };
 		AD574E8F290D34A100EB9F41 /* dataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AD574E8D290D34A100EB9F41 /* dataBase.xcdatamodeld */; };
+		AD6E8D8529122821009F7880 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E8D8429122821009F7880 /* ChatViewModel.swift */; };
+		AD6E8D8729122829009F7880 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E8D8629122829009F7880 /* ChatModel.swift */; };
+		AD6E8D8A29122879009F7880 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E8D8929122879009F7880 /* Constants.swift */; };
 		AD9FF4D4290D38C000DB9F93 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9FF4D3290D38C000DB9F93 /* MainViewModel.swift */; };
 		AD9FF4D6290D38CF00DB9F93 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9FF4D5290D38CF00DB9F93 /* MainModel.swift */; };
 		AD9FF4D8290D3A3400DB9F93 /* OrderStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9FF4D7290D3A3400DB9F93 /* OrderStorage.swift */; };
@@ -82,6 +85,9 @@
 		AD3F2688291020D000C82D74 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		AD3F268A2910258D00C82D74 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		AD574E8E290D34A100EB9F41 /* dataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = dataBase.xcdatamodel; sourceTree = "<group>"; };
+		AD6E8D8429122821009F7880 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		AD6E8D8629122829009F7880 /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
+		AD6E8D8929122879009F7880 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AD9FF4D3290D38C000DB9F93 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainViewModel.swift; path = DeliveryApp/MainViewModel.swift; sourceTree = SOURCE_ROOT; };
 		AD9FF4D5290D38CF00DB9F93 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainModel.swift; path = DeliveryApp/MainModel.swift; sourceTree = SOURCE_ROOT; };
 		AD9FF4D7290D3A3400DB9F93 /* OrderStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStorage.swift; sourceTree = "<group>"; };
@@ -128,6 +134,7 @@
 		1CDDEDBB290BC8620036D0E6 /* DeliveryApp */ = {
 			isa = PBXGroup;
 			children = (
+				AD6E8D882912286A009F7880 /* Sources */,
 				AD3F26822910207F00C82D74 /* ProfileModule */,
 				AD3F26812910207000C82D74 /* ChatModule */,
 				1CDDEE21290BE07F0036D0E6 /* DescriptionModule */,
@@ -387,6 +394,8 @@
 			isa = PBXGroup;
 			children = (
 				AD3F26842910208D00C82D74 /* View */,
+				AD6E8D82291227F3009F7880 /* ViewModel */,
+				AD6E8D8329122801009F7880 /* Model */,
 			);
 			path = ChatModule;
 			sourceTree = "<group>";
@@ -414,6 +423,30 @@
 				AD3F2686291020A100C82D74 /* ProfileViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		AD6E8D82291227F3009F7880 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AD6E8D8429122821009F7880 /* ChatViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AD6E8D8329122801009F7880 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AD6E8D8629122829009F7880 /* ChatModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AD6E8D882912286A009F7880 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				AD6E8D8929122879009F7880 /* Constants.swift */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		AD9FF4D9290D3A9200DB9F93 /*  View */ = {
@@ -546,9 +579,11 @@
 				1CDDEE03290BD1BB0036D0E6 /* MainViewController.swift in Sources */,
 				1CDDEDE6290BCB5A0036D0E6 /* CustomTextField.swift in Sources */,
 				1CDDEE24290BE1CD0036D0E6 /* DescriptionViewController.swift in Sources */,
+				AD6E8D8729122829009F7880 /* ChatModel.swift in Sources */,
 				AD3F268B2910258D00C82D74 /* ChatTableViewCell.swift in Sources */,
 				1CDDEE1C290BD7BF0036D0E6 /* NewOrderModel.swift in Sources */,
 				1CDDEE01290BD1AD0036D0E6 /* MainTabBarController.swift in Sources */,
+				AD6E8D8A29122879009F7880 /* Constants.swift in Sources */,
 				1CDDEDBD290BC8620036D0E6 /* AppDelegate.swift in Sources */,
 				AD9FF4D8290D3A3400DB9F93 /* OrderStorage.swift in Sources */,
 				1CDDEDBF290BC8620036D0E6 /* SceneDelegate.swift in Sources */,
@@ -556,6 +591,7 @@
 				AD9FF4DD290D3AB700DB9F93 /* DescriptionViewModel.swift in Sources */,
 				AD9FF4D4290D38C000DB9F93 /* MainViewModel.swift in Sources */,
 				1CDDEDE1290BCAFB0036D0E6 /* SignInModel.swift in Sources */,
+				AD6E8D8529122821009F7880 /* ChatViewModel.swift in Sources */,
 				AD3F2689291020D000C82D74 /* ChatViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
