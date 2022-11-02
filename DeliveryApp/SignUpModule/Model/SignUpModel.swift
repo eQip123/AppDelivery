@@ -20,8 +20,9 @@ class SignUpModel {
     private func signUp(email: String, password: String, confirmPassword: String) {
         if password == confirmPassword && password.isEmpty != true && confirmPassword.isEmpty != true {
             Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-                if let error = error {
-                    print(error)
+                guard let user = authResult?.user, error == nil else {
+                    print("Error \(error?.localizedDescription)")
+                    return
                 }
             }
             status.accept(true)
