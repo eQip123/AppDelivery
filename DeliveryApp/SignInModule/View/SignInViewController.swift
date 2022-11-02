@@ -131,8 +131,6 @@ class SignInViewController: UIViewController {
             .tap
             .bind {[weak self] _ in
                 
-                self?.viewModel.getSavedData()
-                
                 self?.viewModel.canLogIn()
                 
                 if self?.viewModel.status.value == true {
@@ -141,7 +139,7 @@ class SignInViewController: UIViewController {
                     self?.navigationController?.pushViewController(mainTabBarController, animated: true)
                     
                 } else {
-                    self?.present((self?.viewModel.alertModule()) ?? UIAlertController(), animated: true, completion: nil)
+                    self?.present((self?.viewModel.getAlert()) ?? UIAlertController(), animated: true, completion: nil)
                 }
             }
             .disposed(by: disposeBag)

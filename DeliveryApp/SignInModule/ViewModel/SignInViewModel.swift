@@ -5,34 +5,30 @@ import RxCocoa
 import Foundation
 
 class SignInViewModel {
-    let model = SignInModel()
+    private let model = SignInModel()
+    private let disposeBag = DisposeBag()
     
     let email = BehaviorRelay<String>(value: "")
     let pass = BehaviorRelay<String>(value: "")
-    let savedEmail = BehaviorRelay<String>(value: "")
-    let savedPass = BehaviorRelay<String>(value: "")
     let status = BehaviorRelay<Bool>(value: false)
     
-    func getSavedData() {
-        
-        model.updateSavedData()
-        savedEmail.accept(model.savedEmail.value)
-        savedPass.accept(model.savedPass.value)
+    func getAlert() -> UIAlertController {
+        return model.alertModule()
     }
     
-    func alertModule() -> UIAlertController {
-        
-        let alert = UIAlertController(title: "Ошибка", message: "Неправильный логин или пароль", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-        
-        return alert
-        
+    init() {
+        bindStatus()
+    }
+    
+    func bindStatus() {
+        model.status
+            .bind(to: status)
+            .disposed(by: disposeBag)
     }
     
     func canLogIn() {
         
         model.canLogIn(sEmail: email.value, sPass: pass.value)
-        status.accept(model.status.value)
         print(model.status.value)
     }
 }
