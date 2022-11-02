@@ -130,7 +130,7 @@ class SignInViewController: UIViewController {
         signInButton.rx
             .tap
             .bind {[weak self] _ in
-                
+                //
                 self?.viewModel.canLogIn()
                 
                 _ = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false) { timer in
