@@ -1,7 +1,17 @@
 import UIKit
 import SnapKit
+import RxCocoa
+import RxRelay
+import RxSwift
+import FirebaseStorage
+import FirebaseAuth
+import FirebaseDatabase
+import Firebase
 
 class ChatViewController: UIViewController {
+    
+    private let viewModel = ChatViewModel()
+    private let disposeBag = DisposeBag()
     
     private lazy var chatTextField = UITextField()
     private lazy var sendButton = UIButton()
@@ -10,14 +20,37 @@ class ChatViewController: UIViewController {
         view.delegate = self
         view.dataSource = self
         view.register(ChatTableViewCell.self, forCellReuseIdentifier: ChatTableViewCell.identifier)
-        view.rowHeight = 100
+//        view.rowHeight = 100
         return view
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        viewModel.configureDatabase(tableView: tableView)
         setUpConstraints()
+        bindViewModel()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+//        tableView.reloadData()
+    }
+    
+    func bindViewModel() {
+        chatTextField.rx
+            .text
+            .orEmpty
+            .bind(to: viewModel.text)
+            .disposed(by: disposeBag)
+        
+        sendButton.rx
+            .tap
+            .bind{[weak self] _ in
+                self?.viewModel.sendMassage()
+                print(self?.viewModel.massages.value)
+            }
+            .disposed(by: disposeBag)
     }
     
     private func setUpConstraints() {
@@ -50,18 +83,19 @@ class ChatViewController: UIViewController {
 
 extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return viewModel.massages.value.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ChatTableViewCell.identifier, for: indexPath) as? ChatTableViewCell else {
             return UITableViewCell()
         }
-        
-        // Some nickname
-        cell.nameLabel.text = "Nickname: \("Some nickname")"
-        // Some massage
-        cell.massageTextLabel.text = "Massage: \("Some massage")"
+        let messageSnapshot = viewModel.massages.value[indexPath.row]
+        guard let message = messageSnapshot.value as? [String: String] else { return cell }
+        let name = message[Constants.MessageFields.name] ?? ""
+        let text = message[Constants.MessageFields.text] ?? ""
+        cell.nameLabel.text = name
+        cell.massageTextLabel.text = text
         
         return cell
     }

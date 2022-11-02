@@ -8,14 +8,14 @@ class ChatTableViewCell: UITableViewCell {
         let title = UILabel()
         title.textColor = .black
         title.numberOfLines = 1
-        title.font = .systemFont(ofSize: 14, weight: .regular)
+        title.font = .systemFont(ofSize: 12, weight: .bold)
         return title
     }()
      lazy var massageTextLabel: UILabel = {
         let title = UILabel()
         title.textColor = .gray
-        title.numberOfLines = 1
-        title.font = .systemFont(ofSize: 20, weight: .semibold)
+        title.numberOfLines = 0
+        title.font = .systemFont(ofSize: 20, weight: .regular)
         return title
     }()
     
@@ -29,16 +29,17 @@ class ChatTableViewCell: UITableViewCell {
     private func setupSubview() {
         addSubview(nameLabel)
         nameLabel.snp.makeConstraints { make in
-            make.left.top.equalToSuperview().inset(5)
+            make.left.right.top.equalToSuperview().inset(5)
             make.width.equalTo(300)
-            make.height.equalTo(15)
+//            make.height.equalTo(15)
         }
         addSubview(massageTextLabel)
         massageTextLabel.snp.makeConstraints { make in
-            make.left.equalToSuperview().inset(5)
+            make.left.right.equalToSuperview().inset(5)
             make.top.equalTo(nameLabel.snp.bottom).inset(5)
+            make.bottom.equalToSuperview().inset(5)
             make.width.equalTo(300)
-            make.height.equalTo(45)
+//            make.height.equalTo(45)
         }
         
 //        nameLabel.frame = CGRect(x: 20, y: -30, width: 300, height: 15)
